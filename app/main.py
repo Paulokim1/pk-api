@@ -12,10 +12,6 @@ X = vectorizer.fit_transform(df['abstract'])
 
 app = FastAPI()
 
-@app.get("/hello")
-def read_hello():
-    return {"message": "hello world"}
-
 @app.get("/query")
 def query_route(query: str = Query(..., description="Search query")):
     df_temp = df 
@@ -24,19 +20,19 @@ def query_route(query: str = Query(..., description="Search query")):
     scores = np.array(X.dot(query_vector.T).todense()).flatten()
 
     # Add scores to the DataFrame
-    df_temp['Relevance_Score'] = scores\
+    df_temp['Relevance_Score'] = scores
     
-    df_temp_threshhold = df_temp[df_temp['Relevance_Score'] > 0.1]
+    df_temp_threshhold = df_temp[df_temp['Relevance_Score'] > 0]
 
     # Sort by relevance score in descending order
     sorted_df = df_temp_threshhold.sort_values(by='Relevance_Score', ascending=False)
 
     results = []
-    for row, data in sorted_df.head(10).iterrows():
+    for index, row in sorted_df.head(10).iterrows():
         relevant_document = {
-            'title': data['title'],
-            'content': data['abstract'],
-            'relevance': data['Relevance_Score']
+            'title': row['title'],
+            'content': row['abstract'],
+            'relevance': row['Relevance_Score']
         }
         results.append(relevant_document)
 
