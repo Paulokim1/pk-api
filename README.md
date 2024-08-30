@@ -1,6 +1,6 @@
 # paulowk
 
-O projeto envolve no desenvolvimento de uma API, onde ele recebe como input uma query e devolve documentos relevantes à query. Neste contexto, foi feito um web scrapper que extraiu abstracts de artigos cintíficos no Consensus, um site dedicado para artigos científicos. Os abstracts extraídos foram de artigos relacionados a `health quality`. Informações sobre o scrapper podem ser encontradas (aqui)[scripts/consensus_scrapper.ipynb].  
+O projeto envolve no desenvolvimento de uma API, onde ele recebe como input uma query e devolve documentos relevantes à query. Neste contexto, foi feito um web scrapper que extraiu abstracts de artigos cintíficos no Consensus, um site dedicado para artigos científicos. Os abstracts extraídos foram de artigos relacionados a `health quality`. Informações sobre o scrapper podem ser encontradas (scripts/consensus_scrapper.ipynb)[aqui].  
 
 ## Running the Project with Docker
 
