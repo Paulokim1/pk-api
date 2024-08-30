@@ -1,6 +1,6 @@
 # paulowk
 
-The workgroup is free to choose a theme of their liking. It is the responsability of the group to find a suitable dataset for that theme. The use case should be described in the README.md file in your repository.
+O projeto envolve no desenvolvimento de uma API, onde ele recebe como input uma query e devolve documentos relevantes à query. Neste contexto, foi feito um web scrapper que extraiu abstracts de artigos cintíficos no Consensus, um site dedicado para artigos científicos. Os abstracts extraídos foram de artigos relacionados a `health quality`. Informações sobre o scrapper podem ser encontradas (aqui)[scripts/consensus_scrapper.ipynb].  
 
 ## Running the Project with Docker
 
